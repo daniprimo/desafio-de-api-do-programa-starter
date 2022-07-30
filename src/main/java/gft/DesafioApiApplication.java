@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
@@ -21,8 +20,7 @@ public class DesafioApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DesafioApiApplication.class, args);
 	
-		String  token =  new BCryptPasswordEncoder().encode("1234");
-		System.out.println(token );
 	}
 
+	
 }
