@@ -37,6 +37,7 @@ public class PetController {
 	}
 
 	@PostMapping
+	@PreAuthorize("hasAuthority('Admin')")
 	public ResponseEntity<ConsultaPetDTO> registrarPet(@RequestBody RegistrarPetDTO dto) {
 
 		Pet fromDTO = PetMappersDTO.fromDTO(dto);
@@ -60,6 +61,7 @@ public class PetController {
 	}
 
 	@PutMapping("{id}")
+	@PreAuthorize("hasAuthority('Admin')")
 	public ResponseEntity<ConsultaPetDTO> alterarPet(@RequestBody RegistrarPetDTO dto, @PathVariable Long id) {
 		Pet pet = petService.alterarPorId(PetMappersDTO.fromDTO(dto), id);
 		pet.setCliente(clienteService.pesquisarClientePorId(dto.getCliente()));

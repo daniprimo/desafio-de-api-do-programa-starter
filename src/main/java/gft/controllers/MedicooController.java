@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,6 +40,7 @@ public class MedicooController {
 	}
 
 	@GetMapping
+	@PreAuthorize("hasAuthority('Admin')")
 	public ResponseEntity<List<ConsultaMedicoDTO>> buscarTodosMedicos() {
 		return ResponseEntity
 				.ok(medicoService.listarMedicos().stream().map(MedicoMappers::ftomEntity).collect(Collectors.toList()));

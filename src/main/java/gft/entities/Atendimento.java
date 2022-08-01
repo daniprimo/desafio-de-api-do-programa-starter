@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import br.ce.wcaquino.utils.DataUtils;
+import gft.utils.DataUtils;
 
 @Entity
 @Table(name = "tb_atendimento")

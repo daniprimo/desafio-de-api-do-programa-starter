@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
-import br.ce.wcaquino.utils.DataUtils;
 import gft.entities.Atendimento;
+import gft.utils.DataUtils;
 
 public class AtendimentoMappersDTO {
 
