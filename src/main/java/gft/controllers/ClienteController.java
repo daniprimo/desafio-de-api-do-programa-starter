@@ -18,6 +18,10 @@ import gft.dto.cliente.ClienteMappersDTO;
 import gft.dto.cliente.ConsultaClienteDTO;
 import gft.dto.cliente.RegistroClienteDTO;
 import gft.entities.Cliente;
+import gft.security.dto.UsuarioMappers;
+import gft.security.entities.Usuario;
+import gft.security.service.PerfilService;
+import gft.security.service.UsuarioService;
 import gft.service.ClienteService;
 import gft.service.PetService;
 
@@ -27,17 +31,31 @@ public class ClienteController {
 
 	private final ClienteService clienteService;
 	private final PetService petService;
+	private final UsuarioService usuarioService;
+	private final PerfilService perfilService;
 
-	public ClienteController(ClienteService clienteService, PetService petService) {
+	public ClienteController(ClienteService clienteService, PetService petService, UsuarioService usuarioService,
+			PerfilService perfilService) {
 		this.clienteService = clienteService;
 		this.petService = petService;
+		this.usuarioService = usuarioService;
+		this.perfilService = perfilService;
 	}
 
 	@PostMapping
 	public ResponseEntity<ConsultaClienteDTO> registrarCliente(@RequestBody RegistroClienteDTO dto) throws IOException {
 		Cliente cliente = ClienteMappersDTO.fromDTO(dto);
-		cliente.setPets(petService.listaDosPetsParaClientes(dto.getPets()));
+
+		if (dto.getPets() != null) {
+
+			cliente.setPets(petService.listaDosPetsParaClientes(dto.getPets()));
+		}
+
 		clienteService.salvarCliente(cliente);
+		Usuario usuario = UsuarioMappers.fromDTO(dto.getForm());
+		usuario.setPerfil(perfilService.buscarPorId(2l));
+		usuarioService.salvarusuario(usuario);
+
 		return ResponseEntity.ok(ClienteMappersDTO.fromEntity(cliente));
 	}
 
@@ -54,9 +72,9 @@ public class ClienteController {
 	}
 
 	@PutMapping("{id}")
-	public ResponseEntity<ConsultaClienteDTO> alterarCliente(@RequestBody RegistroClienteDTO dto,
-			@PathVariable Long id) throws IOException {
-		Cliente clienteOrigin = clienteService.alterarClientePorId(ClienteMappersDTO.fromDTO(dto),id);
+	public ResponseEntity<ConsultaClienteDTO> alterarCliente(@RequestBody RegistroClienteDTO dto, @PathVariable Long id)
+			throws IOException {
+		Cliente clienteOrigin = clienteService.alterarClientePorId(ClienteMappersDTO.fromDTO(dto), id);
 		clienteOrigin.setPets(petService.listaDosPetsParaClientes(dto.getPets()));
 		ConsultaClienteDTO clienteDTO = ClienteMappersDTO.fromEntity(clienteOrigin);
 		return ResponseEntity.ok(clienteDTO);

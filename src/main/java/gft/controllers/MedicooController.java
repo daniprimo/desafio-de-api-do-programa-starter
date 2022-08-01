@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import gft.dto.ConsumindoAPI.ViaCep;
 import gft.dto.medico.ConsultaMedicoDTO;
 import gft.dto.medico.MedicoMappers;
 import gft.dto.medico.RegistrarMedicoDTO;
 import gft.entities.MedicoVeterinario;
+import gft.security.dto.UsuarioMappers;
+import gft.security.entities.Usuario;
+import gft.security.service.PerfilService;
+import gft.security.service.UsuarioService;
 import gft.service.MedicoService;
 
 @Controller
@@ -26,9 +29,13 @@ import gft.service.MedicoService;
 public class MedicooController {
 
 	private final MedicoService medicoService;
+	private final PerfilService perfilService;
+	private final UsuarioService usuarioService;
 
-	public MedicooController(MedicoService medicoService) {
+	public MedicooController(MedicoService medicoService, PerfilService perfilService, UsuarioService usuarioService) {
 		this.medicoService = medicoService;
+		this.perfilService = perfilService;
+		this.usuarioService = usuarioService;
 	}
 
 	@GetMapping
@@ -39,13 +46,12 @@ public class MedicooController {
 
 	@PostMapping
 	public ResponseEntity<ConsultaMedicoDTO> registrarMedico(@RequestBody RegistrarMedicoDTO dto) throws IOException {
-		ViaCep cep = new ViaCep(dto.getCep());
-		MedicoVeterinario medico = medicoService.salvarMedico(MedicoMappers.fromDTO(dto));
-		ConsultaMedicoDTO entity = MedicoMappers.ftomEntity(medico);
-		entity.setLocalidade(cep.getLocalidade());
-		entity.setCep(cep.getCep());
-		entity.setLogradouro(cep.getLogradouro());
-		entity.setUf(cep.getUf());
+		ConsultaMedicoDTO entity = MedicoMappers.ftomEntity(medicoService.salvarMedico(MedicoMappers.fromDTO(dto)));
+
+		Usuario usuario = UsuarioMappers.fromDTO(dto.getUsuario());
+		usuario.setPerfil(perfilService.buscarPorId(1l));
+		usuarioService.salvarusuario(usuario);
+
 		return ResponseEntity.ok(entity);
 	}
 
@@ -56,7 +62,8 @@ public class MedicooController {
 	}
 
 	@PutMapping("{id}")
-	public ResponseEntity<ConsultaMedicoDTO> alterarMedico(@RequestBody RegistrarMedicoDTO dto, @PathVariable Long id) {
+	public ResponseEntity<ConsultaMedicoDTO> alterarMedico(@RequestBody RegistrarMedicoDTO dto, @PathVariable Long id)
+			throws IOException {
 		MedicoVeterinario veterinario = medicoService.alterarMedicoCadastarado(MedicoMappers.fromDTO(dto), id);
 		return ResponseEntity.ok(MedicoMappers.ftomEntity(veterinario));
 	}

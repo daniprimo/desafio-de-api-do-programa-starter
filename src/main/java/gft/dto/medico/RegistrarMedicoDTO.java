@@ -1,24 +1,24 @@
 package gft.dto.medico;
 
-import gft.entities.Endereco;
+import gft.dto.endereco.RegistrarEnderecoDTO;
+import gft.security.controllers.form.AutentificacaoForm;
 
 public class RegistrarMedicoDTO {
 
 	private String registroCRMV;
 	private String nome;
-	private String logradouro;
-	private String cep;
-	private Endereco endereco;
+	private RegistrarEnderecoDTO endereco;
+	private AutentificacaoForm usuario;
 
 	public RegistrarMedicoDTO() {
 	}
 
-	public RegistrarMedicoDTO(String registroCRMV, String nome, String logradouro, String cep, Endereco endereco) {
+	public RegistrarMedicoDTO(String registroCRMV, String nome, RegistrarEnderecoDTO endereco,
+			AutentificacaoForm usuario) {
 		this.registroCRMV = registroCRMV;
 		this.nome = nome;
-		this.logradouro = logradouro;
-		this.cep = cep;
 		this.endereco = endereco;
+		this.usuario = usuario;
 	}
 
 	public String getRegistroCRMV() {
@@ -37,28 +37,20 @@ public class RegistrarMedicoDTO {
 		this.nome = nome;
 	}
 
-	public Endereco getEndereco() {
+	public RegistrarEnderecoDTO getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(RegistrarEnderecoDTO endereco) {
 		this.endereco = endereco;
 	}
 
-	public String getLogradouro() {
-		return logradouro;
+	public AutentificacaoForm getUsuario() {
+		return usuario;
 	}
 
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
-	}
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
+	public void setUsuario(AutentificacaoForm usuario) {
+		this.usuario = usuario;
 	}
 
 }

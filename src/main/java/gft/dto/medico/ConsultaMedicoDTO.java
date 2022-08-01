@@ -1,15 +1,13 @@
 package gft.dto.medico;
 
+import gft.entities.Endereco;
+
 public class ConsultaMedicoDTO {
 
 	private Long id;
 	private String registroCRMV;
 	private String nome;
-	private String cep;
-	private String logradouro;
-	private String localidade;
-	private String uf;
-	private String complemento;
+	private Endereco endereco;
 
 	public ConsultaMedicoDTO(Long id, String registroCRMV, String nome) {
 		this.id = id;
@@ -17,16 +15,11 @@ public class ConsultaMedicoDTO {
 		this.nome = nome;
 	}
 
-	public ConsultaMedicoDTO(Long id, String registroCRMV, String nome, String cep, String logradouro,
-			String localidade, String uf, String complemento) {
+	public ConsultaMedicoDTO(Long id, String registroCRMV, String nome, Endereco endereco) {
 		this.id = id;
 		this.registroCRMV = registroCRMV;
 		this.nome = nome;
-		this.cep = cep;
-		this.logradouro = logradouro;
-		this.localidade = localidade;
-		this.uf = uf;
-		this.complemento = complemento;
+		this.endereco = endereco;
 	}
 
 	public ConsultaMedicoDTO() {
@@ -56,44 +49,12 @@ public class ConsultaMedicoDTO {
 		this.nome = nome;
 	}
 
-	public String getCep() {
-		return cep;
+	public Endereco getEndereco() {
+		return endereco;
 	}
 
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-
-	public String getLogradouro() {
-		return logradouro;
-	}
-
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
-	}
-
-	public String getLocalidade() {
-		return localidade;
-	}
-
-	public void setLocalidade(String localidade) {
-		this.localidade = localidade;
-	}
-
-	public String getUf() {
-		return uf;
-	}
-
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
-
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 }

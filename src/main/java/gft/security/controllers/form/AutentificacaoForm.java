@@ -4,6 +4,13 @@ public class AutentificacaoForm {
 
 	private String email;
 	private String senha;
+	
+
+	
+	public AutentificacaoForm(String email, String senha) {
+		this.email = email;
+		this.senha = senha;
+	}
 
 	public AutentificacaoForm() {
 	}

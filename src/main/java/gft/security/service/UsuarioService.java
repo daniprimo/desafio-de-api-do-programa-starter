@@ -18,6 +18,10 @@ public class UsuarioService implements UserDetailsService {
 	public UsuarioService(UsuarioRepository usuarioRepository) {
 		this.usuarioRepository = usuarioRepository;
 	}
+	
+	public Usuario salvarusuario (Usuario usuario) {
+		return usuarioRepository.save(usuario);
+	}
 
 	public Usuario buscarUsuarioPorEmail(String email) {
 		Optional<Usuario> optional = usuarioRepository.findByEmail(email);

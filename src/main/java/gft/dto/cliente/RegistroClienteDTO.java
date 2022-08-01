@@ -1,6 +1,7 @@
 package gft.dto.cliente;
 
 import gft.dto.endereco.RegistrarEnderecoDTO;
+import gft.security.controllers.form.AutentificacaoForm;
 
 public class RegistroClienteDTO {
 
@@ -9,13 +10,16 @@ public class RegistroClienteDTO {
 	private String telefone;
 	private RegistrarEnderecoDTO endereco;
 	private Long pets;
+	private AutentificacaoForm form;
 
-	public RegistroClienteDTO(String cpf, String nome, String telefone, RegistrarEnderecoDTO endereco, Long pets) {
+	public RegistroClienteDTO(String cpf, String nome, String telefone, RegistrarEnderecoDTO endereco, Long pets,
+			AutentificacaoForm form) {
 		this.cpf = cpf;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.endereco = endereco;
 		this.pets = pets;
+		this.form = form;
 	}
 
 	public RegistroClienteDTO() {
@@ -61,6 +65,12 @@ public class RegistroClienteDTO {
 		this.pets = pets;
 	}
 
-	
+	public AutentificacaoForm getForm() {
+		return form;
+	}
+
+	public void setForm(AutentificacaoForm form) {
+		this.form = form;
+	}
 
 }
