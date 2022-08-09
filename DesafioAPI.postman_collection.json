@@ -1,0 +1,1037 @@
+{
+	"info": {
+		"_postman_id": "4775ebd7-1054-4e6a-9a13-aefe97ed7df9",
+		"name": "DesafioAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21870107"
+	},
+	"item": [
+		{
+			"name": "Endereco",
+			"item": [
+				{
+					"name": "Buscar Todos os Enderecos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2NjUzfQ.j-Havwzn6DsKWWot5qPeT7PAzL8NEgEQwUQrq-mO8Sc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/endereco",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Endereco",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2NjUzfQ.j-Havwzn6DsKWWot5qPeT7PAzL8NEgEQwUQrq-mO8Sc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cep\":\"06385820\",\r\n    \"logradouro\":\"Rua Ipixuna\",\r\n    \"numero\":345,\r\n    \"complemento\":\"Bloco B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/endereco",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar pelo cep",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/endereco/04343",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"endereco",
+								"04343"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Endereco",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI1OTI2fQ.c1L5OXyP0rRHs8HCoenk8_FoJRfZI575z4A-DZpdAIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cep\":\"06385820\",\r\n    \"logradouro\":\"Rua Ipixuna\",\r\n    \"numero\":345,\r\n    \"complemento\":\"54535\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/endereco/06390070",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"endereco",
+								"06390070"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar endereco",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/endereco/06390070",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"endereco",
+								"06390070"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/endereco",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/endereco",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medico",
+			"item": [
+				{
+					"name": "AdicionarMedico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI1OTI2fQ.c1L5OXyP0rRHs8HCoenk8_FoJRfZI575z4A-DZpdAIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registroCRMV\":\"MDV-0ddede0673\",\r\n    \"nome\":\"Dr.Jacksodsadan \",\r\n    \"endereco\":{\r\n        \"cep\": \"06385820\",\r\n        \"numero\": 141\r\n    },\r\n    \"usuario\":{\r\n          \"email\": \"daniellopes0208@hotmail.com\",\r\n            \"senha\": \"pedropaulo123\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veterinario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarTodosMedicos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veterinario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarAlterar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registroCRMV\": \"CDCDCD\",\r\n    \"nome\": \"Rua Manteri\",\r\n    \"endereco\":{\r\n        \"cep\": \"06385820\",\r\n        \"numero\": 141\r\n    },\r\n    \"usuario\":{\r\n          \r\n    }\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veterinario/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinario",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PesquisarPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MTkzMjE4fQ.t0kTy6e5-WXs4Zq_T-KSeS4wl6SAfQD1oF9mf6ywvY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veterinario/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExcluirMedico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MTkzMjE4fQ.t0kTy6e5-WXs4Zq_T-KSeS4wl6SAfQD1oF9mf6ywvY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veterinario/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinario",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "AdicionarCliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI1OTI2fQ.c1L5OXyP0rRHs8HCoenk8_FoJRfZI575z4A-DZpdAIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"13372655345\",\r\n    \"nome\": \"Paulo Roberto\",\r\n    \"telefone\": \"11 93777-0569\",\r\n    \"endereco\": {\r\n        \"cep\": \"06385820\",\r\n        \"numero\": 141\r\n    },\r\n    \"pets\": null,\r\n    \"form\": {\r\n        \"email\": \"daniellopes0208@hotmail.com\",\r\n        \"senha\": \"pedropaulo123\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cliente",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarTodosClientes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MjAyNjMyfQ.y8B77A_90LHgfJNaR_KtwXZd7ejhUF_zt5DPiK6yQ9k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cliente",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PesquisarPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cliente/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PesquisarAtualizarPorId",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"13372655345\",\r\n    \"nome\": \"Paulo Roberto\",\r\n    \"telefone\": \"11 93777-0569\",\r\n    \"endereco\": {\r\n        \"cep\": \"06385820\",\r\n        \"numero\": 141\r\n    },\r\n    \"pets\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cliente/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExcluirCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cliente/11",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Buscar todos pets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Pet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Braiam\",\r\n    \"cor\": \"Azul\",\r\n    \"especie\": \"15\",\r\n    \"sexo\": \"masculino\",\r\n    \"pelugem\": \"caramelo\",\r\n    \"cliente\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar pets por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar e Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Braiam\",\r\n    \"cor\": \"Azul\",\r\n    \"especie\": \"Pitbul\",\r\n    \"sexo\": \"masculino\",\r\n    \"pelugem\": \"caramelo\",\r\n    \"cliente\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletando",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pet/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Atendimento",
+			"item": [
+				{
+					"name": "adicionar registro de atendimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI2OTYzfQ.t2gSl4nW4OMrASCMsPHbQr4ZfajZyqeYgRyKcrXYXGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pet\": 1,\r\n    \"peso\": \"43kg\",\r\n    \"veterinario\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/atendimento",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todos atendiemnto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI3MjY4fQ.IiXC6_3L81MJU9Xu0Qx1vCTqG-rTRKnSQ5G4pwmAI8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/atendimento",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar atendimento por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI3MjY4fQ.IiXC6_3L81MJU9Xu0Qx1vCTqG-rTRKnSQ5G4pwmAI8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/atendimento/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"atendimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar por id e atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI3MjY4fQ.IiXC6_3L81MJU9Xu0Qx1vCTqG-rTRKnSQ5G4pwmAI8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pet\": 1,\r\n    \"peso\": \"77kg\",\r\n    \"veterinario\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/atendimento/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"atendimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar   atendimento por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MzI3MjY4fQ.IiXC6_3L81MJU9Xu0Qx1vCTqG-rTRKnSQ5G4pwmAI8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/atendimento/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"atendimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consumindo API dog",
+			"item": [
+				{
+					"name": "Pesquisar ID por nome",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MjAyNjMyfQ.y8B77A_90LHgfJNaR_KtwXZd7ejhUF_zt5DPiK6yQ9k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/raca/nome/pit bull",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"raca",
+								"nome",
+								"pit bull"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todas as racas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MjAyNTMxfQ.BAz5SG5llxyGEWOvl-0iiCB2IqbQVhSsWIUOHmzZpQI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/raca",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"raca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pesquisar raca por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUHJvZ3JhbWFTdGFydGVyIiwiZXhwIjoxNjU5MTkxNDE5fQ.ZcuL16BZnnKxaLcXY-JxE8Xn-CNs05T-Zs5VFJbCYDY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/raca/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"raca",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "LogOn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"administrador@gft.com\",\r\n    \"senha\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,101 +1,173 @@
-# Desafio de API -Atendimento Veterinário
+# Workshops Starter #4
 
-### Configuração:
+***
 
-- Foi utilizado nesteprograma o JDK 17.
+### Objetivo
 
-- O Spring Tools Suítes4 como IDE de produção.
+Cada um fazer uma apresentação de **30 minutos** e responder dúvidas dos demais por **15 min**, além de bolar pelo menos **6 perguntas** para serem enviadas aos starters como questionário.
 
-- Para a comunicação com o Banco de Dados foi utilizado o FlyWay para realizar a migração.
+***
 
-- Foi utilizado oSecurity sob o auxilio do JWT 4.0
+### Regras
 
-- E para criação dosEndpoints foi o utilizado Postman
+- Cada grupo pode ter até **5 integrantes**.
+- Ponha seu nome abaixo da linha "Integrantes:" do tema que deseja aprensentar e acima da linha horizontal
+- O início das apresentações será nesta quinta-feira (04/08/2022)
+- Git e os temas que se tratam de linguagens serão as primeiras apresentações, os demais ainda serão definidos 
+- Todos os temas deverão apresentar um pouco da história do tema
+- Os temas que se tratam de linguagens deverão apresentar um "Hello Word"
 
-  - [OBESERVAÇÃO] - Foi configurado o Swaggerporem abortei a tentativa de documenta-lo porque não consegui resolver o pontoda autorização através do token, porem foi utilizado as dependências Swagger2.10.5 e o Springdoc-openapi
+***
 
-- E para realizar ostestes  foi utilizado o Junit4 e oMockito 4.0.
+Alteração 1
+Alteração 2
 
-### Como Iniciar oprojeto
+### Temas
 
-- Para autenticar o token para obter acesso as Endpoints 
+1- Git, comandos e técnicas de uso
 
-  1 - O programa automaticamente irá criar um usuárioadministrador o qual será utilizado para realizar o primeiro acesso.
+Integrantes:
 
-  2 -  acessar com o e-mail (administrador@gft.com) e a senha("1234") 
+***
 
-      
+2- Código Limpo e Boas práticas
 
-<p align="center">
-    <img width="470" src="src/imagens/logon.PNG">
-</p>
+Integrantes:
 
-      [OBSERVAÇÃO] -Infelizmente não consegui criar a logica para realizar a autentificarão dosdados somente a ação no controller
+- Pedro Oliveira
+- Leonardo Messias 
+- Jardel Moares
+- Josimar
 
-  3 - Os usuários serão criados juntamente como registro do cliente ou medico e não ira permitir a mesma chave que no caso éo e-mail.
+***
 
-</p>
+3- Javascript
 
-## Regras para adicionare extrair informações
+Guilherme Carvalho
 
-- Passos para iniciaro programa da maneira correta
+Integrantes:
 
-  - Os pets só serão criados se tiver um cliente valido, então o registro do mesmo depende dos BD de cliente, não consegui verificar antes da entrega que houve um erro de logica,  e  o primeiro registro de cliente deve ser criado com o atributo pet como "null"
+***
 
-  - Os endereços serão criados dentro dos endpoints de cliente e medico, e será armazenado de maneira individual
+4- Typescript
 
-  - Ao invés de colocar o atributo como "raça"adicionei como "espécie" e a mesma que esta consumindo da API the dog ira adicionar o nome da raça automaticamente através do ID, como cliente também
+Integrantes:
 
-  
+- Felippe Nogueira Vieira
+- Benilson
+- Thiago Roberto Rocha
+- Karoline Lima Vieira
 
-        <img title="null" src="file:///C:/Users/DLLM/OneDrive - GFT Technologies SE/Desktop/API/Projeto/desafioAPI/src/imagens/cliente.PNG" alt="null" width="470">
+***
 
-   
+5- Rust
 
-- E para auxiliar foi criado o endpoint de nome "ConsumindoAPI" , para buscar todos ou por nome os tipos de raça e temperamento dos pets.
+Integrantes:
+<<<<<<< HEAD
 
-  <p align="center">
+- Arthur Aquino Vilela
+- Thiago Jorge Saraiva
 
-        <img title="null" src="file:///C:/Users/DLLM/OneDrive - GFT Technologies SE/Desktop/API/Projeto/desafioAPI/src/imagens/bscandotodasasracas.PNG" alt="null" width="470">
+6- Bancos de dados não relacionais
 
-        <img title="null" src="file:///C:/Users/DLLM/OneDrive - GFT Technologies SE/Desktop/API/Projeto/desafioAPI/src/imagens/consumindoAPIexterna.PNG" alt="null" width="470">
+Integrantes:
 
-<p>
-    <img width="470" src="src/imagens/consumindoporID.PNG">
-</p>
+Matheus Eduardo do nascimento
+EOEN - Erick Ap. Escagion
 
-# Sobre os testes
+7- Data Science
 
-- Foi realizado ametodologia TDD somente com as entidades após não consegui realiza-lo
+Integrantes:
 
-- Então foi feita uma coberturade 40% do código apenas
+GEFI - Guilherme Ferreira de Assis
 
- 
+***
 
+8- Tipos de Relacionamentos - DER
 
+Integrantes:
 
+***
 
+9- Microserviços e Messageria
 
+Integrantes:
+-matheus dias
 
+***
 
+10- Golang
 
+Integrantes:
 
+Jonathan Pinto de Moraes
+Raphael Azevedo
 
+***
 
+11- Linguagens Low Code
 
+Integrantes:
 
+***
 
+12- IA
 
+Integrantes:
 
+- Arthur Tomás da Silva
+- Luiz Felipe Kaercher de Oliveira
 
+***
 
+13- Programação Reativa
 
+Integrantes:
 
+***
 
+14- CI/CD e Chaos Monkey
 
+Integrantes:
 
+***
 
+15- Cloud
 
+Integrantes:
 
+***
 
+16- DevOps
 
+Integrantes:
+
+- Marden Laairoy Correia de Oliveira
+- Breno Gomes da Silva
+
+***
+
+17- Gestão ágil: Scrum/Lean/Kanban
+
+Integrantes:
+Priscilla Neves de Souza Santos
+
+***
+
+18- React e React Native
+
+Integrantes:
+
+- Vanessa Moreira Wendling
+- 
+
+19 - Qualidade de Software e tipos de testes
+
+- Bruno Ferreira
+
+Integrantes:
+
+***
+
+- Henrique Paoletti Rodrigues
+- Henrique Benjamim
